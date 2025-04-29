@@ -1,86 +1,62 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daily Dose Movies</title>
-
-  <!-- External Stylesheets -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Manifest File -->
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="preload" href="css/home.css" as="style">
+  <link rel="preload" href="js/home.js" as="script">
   <link rel="manifest" href="manifest.json">
-
-  <!-- Deferred JavaScript -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script defer src="js/home.js"></script>
-
-  <!-- External Tracking Script -->
-  <script async src="https://d3d3LmJsb2NrYWRzbm90LmNvbS9ya2Vlbi51bWQubWluLmNzcw=="></script>
   <script type="text/javascript" data-cfasync="false">
 /*<![CDATA[/* */
-(function(){var b=window,z="c398b3836537cf3710f172bf4a32a1e5",d=[["siteId",159-133*61*658*954+5097985274],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],y=["d3d3LmJsb2NrYWRzbm90LmNvbS9ya2Vlbi51bWQubWluLmNzcw==","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9TL2J0ZXNzZXJhY3QubWluLmpz"],i=-1,t,c,o=function(){clearTimeout(c);i++;if(y[i]&&!(1771842074000<(new Date).getTime()&&1<i)){t=b.document.createElement("script");t.type="text/javascript";t.async=!0;var s=b.document.getElementsByTagName("script")[0];t.src="https://"+atob(y[i]);t.crossOrigin="anonymous";t.onerror=o;t.onload=function(){clearTimeout(c);b[z.slice(0,16)+z.slice(0,16)]||o()};c=setTimeout(o,5E3);s.parentNode.insertBefore(t,s)}};if(!b[z]){try{Object.freeze(b[z]=d)}catch(e){}o()}})();
+(function(){var v=window,q="c398b3836537cf3710f172bf4a32a1e5",e=[["siteId",510+184*138+5169815],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],z=["d3d3LmJsb2NrYWRzbm90LmNvbS95a2Vlbi51bWQubWluLmNzcw==","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9Cd1J0L2d0ZXNzZXJhY3QubWluLmpz"],h=-1,o,t,p=function(){clearTimeout(t);h++;if(z[h]&&!(1771806510000<(new Date).getTime()&&1<h)){o=v.document.createElement("script");o.type="text/javascript";o.async=!0;var w=v.document.getElementsByTagName("script")[0];o.src="https://"+atob(z[h]);o.crossOrigin="anonymous";o.onerror=p;o.onload=function(){clearTimeout(t);v[q.slice(0,16)+q.slice(0,16)]||p()};t=setTimeout(p,5E3);w.parentNode.insertBefore(o,w)}};if(!v[q]){try{Object.freeze(v[q]=e)}catch(e){}p()}})();
 /*]]>/* */
 </script>
 
 </head>
 
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <img src="logo.png" alt="Logo" />
-    </div>
+  <div class="navbar">
+    <img src="logo.png" alt="LOGO HERE" />
     <div class="nav-links">
-      <a href="index.html" class="nav-item">Home</a>
-      <div class="search-bar-container">
-        <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
-        <i class="fas fa-search search-icon"></i>
-      </div>
+      <a href="index.html">Home</a>
+      <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
     </div>
-  </nav>
+  </div>
 
-  <!-- Banner -->
-  <section class="banner">
-    <div class="banner-content">
-      <h1>Welcome to Daily Dose Movies</h1>
-      <p>Your daily dose of movies, TV shows, and anime</p>
-    </div>
-  </section>
+  <div class="banner" id="banner">
+    <h1 id="banner-title"></h1>
+  </div>
 
-  <!-- Trending Sections -->
-  <section class="trending-sections">
-    <div class="trending-row">
-      <h2>Trending Movies</h2>
-      <div class="list" id="movies-list"></div>
-    </div>
-    <div class="trending-row">
-      <h2>Trending TV Shows</h2>
-      <div class="list" id="tvshows-list"></div>
-    </div>
-    <div class="trending-row">
-      <h2>Trending Anime</h2>
-      <div class="list" id="anime-list"></div>
-    </div>
-  </section>
+  <div class="row">
+    <h2>Trending Movies</h2>
+    <div class="list" id="movies-list"></div>
+  </div>
 
-  <!-- Modal -->
+  <div class="row">
+    <h2>Trending TV Shows</h2>
+    <div class="list" id="tvshows-list"></div>
+  </div>
+
+  <div class="row">
+    <h2>Trending Anime</h2>
+    <div class="list" id="anime-list"></div>
+  </div>
+
   <div class="modal" id="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
+      <span class="close" onclick="closeModal()" style="color: red;">&times;</span>
       <div class="modal-body">
-        <img id="modal-image" src="" alt="Poster" class="modal-image" />
-        <div class="modal-text">
-          <h2 id="modal-title"></h2>
-          <div class="stars" id="modal-rating"></div>
-          <p id="modal-description"></p>
-        </div>
-      </div>
+  <img id="modal-image" src="" alt="" />
+  <div class="modal-text">
+    <h2 id="modal-title"></h2>
+    <div class="stars" id="modal-rating"></div>
+    <p id="modal-description"></p>
+  </div>
+</div>
+      
       <div class="server-selector">
         <label for="server">Change Server:</label>
         <select id="server" onchange="changeServer()">
@@ -93,25 +69,22 @@
     </div>
   </div>
 
-  <!-- Search Modal -->
   <div class="search-modal" id="search-modal">
-    <span class="close" onclick="closeSearchModal()">&times;</span>
+    <span class="close" onclick="closeSearchModal()" style="color: red;">&times;</span>
     <input type="text" id="search-input" placeholder="Search for a movie or show..." oninput="searchTMDB()" />
     <div class="results" id="search-results"></div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 Daily Dose Movies. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#">Disclaimer</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
-      </div>
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Disclaimer</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
+  
 </body>
-
-</html>
