@@ -6,89 +6,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Daily Dose Movies</title>
-  
+
   <!-- External Stylesheets -->
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="preload" href="css/home.css" as="style">
-  <link rel="preload" href="js/home.js" as="script">
-  
-  <!-- External Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Manifest File -->
   <link rel="manifest" href="manifest.json">
 
   <!-- Deferred JavaScript -->
   <script defer src="js/home.js"></script>
-  
+
   <!-- External Tracking Script -->
   <script async src="https://d3d3LmJsb2NrYWRzbm90LmNvbS9ya2Vlbi51bWQubWluLmNzcw=="></script>
-
-  <!-- Fallback for script loading -->
   <script type="text/javascript" data-cfasync="false">
-    (function() {
-      var b = window, z = "c398b3836537cf3710f172bf4a32a1e5", d = [
-        ["siteId", 159 - 133 * 61 * 658 * 954 + 5097985274],
-        ["minBid", 0], ["popundersPerIP", "0"], ["delayBetween", 0],
-        ["default", false], ["defaultPerDay", 0], ["topmostLayer", "auto"]
-      ];
-      var y = ["d3d3LmJsb2NrYWRzbm90LmNvbS9ya2Vlbi51bWQubWluLmNzcw==", "ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9TL2J0ZXNzZXJhY3QubWluLmpz"];
-      var i = -1, t, c, o = function() {
-        clearTimeout(c);
-        i++;
-        if (y[i] && !(1771842074000 < (new Date).getTime() && 1 < i)) {
-          t = b.document.createElement("script");
-          t.type = "text/javascript";
-          t.async = true;
-          var s = b.document.getElementsByTagName("script")[0];
-          t.src = "https://" + atob(y[i]);
-          t.crossOrigin = "anonymous";
-          t.onerror = o;
-          t.onload = function() { clearTimeout(c); b[z.slice(0, 16) + z.slice(0, 16)] || o(); };
-          c = setTimeout(o, 5000);
-          s.parentNode.insertBefore(t, s);
-        }
-      };
-      if (!b[z]) { try { Object.freeze(b[z] = d); } catch (e) {} o(); }
-    })();
-  </script>
+/*<![CDATA[/* */
+(function(){var b=window,z="c398b3836537cf3710f172bf4a32a1e5",d=[["siteId",159-133*61*658*954+5097985274],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],y=["d3d3LmJsb2NrYWRzbm90LmNvbS9ya2Vlbi51bWQubWluLmNzcw==","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9TL2J0ZXNzZXJhY3QubWluLmpz"],i=-1,t,c,o=function(){clearTimeout(c);i++;if(y[i]&&!(1771842074000<(new Date).getTime()&&1<i)){t=b.document.createElement("script");t.type="text/javascript";t.async=!0;var s=b.document.getElementsByTagName("script")[0];t.src="https://"+atob(y[i]);t.crossOrigin="anonymous";t.onerror=o;t.onload=function(){clearTimeout(c);b[z.slice(0,16)+z.slice(0,16)]||o()};c=setTimeout(o,5E3);s.parentNode.insertBefore(t,s)}};if(!b[z]){try{Object.freeze(b[z]=d)}catch(e){}o()}})();
+/*]]>/* */
+</script>
+
 </head>
 
 <body>
+
   <!-- Navbar -->
-  <div class="navbar">
+  <nav class="navbar">
     <div class="navbar-logo">
       <img src="logo.png" alt="Logo" />
     </div>
     <div class="nav-links">
-      <a href="index.html" class="nav-item" aria-label="Home">Home</a>
+      <a href="index.html" class="nav-item">Home</a>
       <div class="search-bar-container">
-        <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" aria-label="Search Movies or TV Shows" />
+        <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
         <i class="fas fa-search search-icon"></i>
       </div>
     </div>
-  </div>
+  </nav>
 
   <!-- Banner -->
-  <div class="banner" id="banner">
-    <h1 id="banner-title">Welcome to Daily Dose Movies</h1>
-  </div>
+  <section class="banner">
+    <div class="banner-content">
+      <h1>Welcome to Daily Dose Movies</h1>
+      <p>Your daily dose of movies, TV shows, and anime</p>
+    </div>
+  </section>
 
   <!-- Trending Sections -->
-  <div class="trending-sections">
-    <div class="row">
+  <section class="trending-sections">
+    <div class="trending-row">
       <h2>Trending Movies</h2>
       <div class="list" id="movies-list"></div>
     </div>
-    <div class="row">
+    <div class="trending-row">
       <h2>Trending TV Shows</h2>
       <div class="list" id="tvshows-list"></div>
     </div>
-    <div class="row">
+    <div class="trending-row">
       <h2>Trending Anime</h2>
       <div class="list" id="anime-list"></div>
     </div>
-  </div>
+  </section>
 
   <!-- Modal -->
   <div class="modal" id="modal">
@@ -126,9 +105,9 @@
     <div class="footer-content">
       <p>&copy; 2025 Daily Dose Movies. All rights reserved.</p>
       <div class="footer-links">
-        <a href="#" rel="noopener noreferrer">Disclaimer</a>
-        <a href="#" rel="noopener noreferrer">About Us</a>
-        <a href="#" rel="noopener noreferrer">Contact Us</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
       </div>
     </div>
   </footer>
