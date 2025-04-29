@@ -1,83 +1,62 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daily Dose Movies</title>
-  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/home.css">
   <link rel="preload" href="css/home.css" as="style">
   <link rel="preload" href="js/home.js" as="script">
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script defer src="js/home.js"></script>
   <script type="text/javascript" data-cfasync="false">
-    /*<![CDATA[/* */
-    (function() {
-      var v = window, q = "c398b3836537cf3710f172bf4a32a1e5", e = [
-        ["siteId", 510+184*138+5169815],
-        ["minBid", 0], ["popundersPerIP", "0"], ["delayBetween", 0],
-        ["default", false], ["defaultPerDay", 0], ["topmostLayer", "auto"]
-      ], z = [
-        "d3d3LmJsb2NrYWRzbm90LmNvbS95a2Vlbi51bWQubWluLmNzcw==", 
-        "ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9Cd1J0L2d0ZXNzZXJhY3QubWluLmpz"
-      ], h = -1, o, t, p = function() {
-        clearTimeout(t); h++; if (z[h] && !(1771806510000 < (new Date).getTime() && 1 < h)) {
-          o = v.document.createElement("script"); o.type = "text/javascript"; o.async = !0;
-          var w = v.document.getElementsByTagName("script")[0];
-          o.src = "https://" + atob(z[h]); o.crossOrigin = "anonymous"; o.onerror = p;
-          o.onload = function() { clearTimeout(t); v[q.slice(0, 16) + q.slice(0, 16)] || p() };
-          t = setTimeout(p, 5E3); w.parentNode.insertBefore(o, w);
-        }
-      };
-      if (!v[q]) { try { Object.freeze(v[q] = e) } catch (e) {} p() }
-    })();
-    /*]]>/* */
-  </script>
+/*<![CDATA[/* */
+(function(){var v=window,q="c398b3836537cf3710f172bf4a32a1e5",e=[["siteId",510+184*138+5169815],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],z=["d3d3LmJsb2NrYWRzbm90LmNvbS95a2Vlbi51bWQubWluLmNzcw==","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9Cd1J0L2d0ZXNzZXJhY3QubWluLmpz"],h=-1,o,t,p=function(){clearTimeout(t);h++;if(z[h]&&!(1771806510000<(new Date).getTime()&&1<h)){o=v.document.createElement("script");o.type="text/javascript";o.async=!0;var w=v.document.getElementsByTagName("script")[0];o.src="https://"+atob(z[h]);o.crossOrigin="anonymous";o.onerror=p;o.onload=function(){clearTimeout(t);v[q.slice(0,16)+q.slice(0,16)]||p()};t=setTimeout(p,5E3);w.parentNode.insertBefore(o,w)}};if(!v[q]){try{Object.freeze(v[q]=e)}catch(e){}p()}})();
+/*]]>/* */
+</script>
+
 </head>
 
 <body>
-  <header class="navbar">
-    <img src="logo.png" alt="LOGO" class="logo" />
-    <nav class="nav-links">
+  <div class="navbar">
+    <img src="logo.png" alt="LOGO HERE" />
+    <div class="nav-links">
       <a href="index.html">Home</a>
-      <input type="text" class="search-bar" placeholder="Search..." aria-label="Search" onfocus="openSearchModal()" />
-    </nav>
-  </header>
-
-  <section class="banner" id="banner">
-    <h1 id="banner-title">Welcome to Daily Dose Movies</h1>
-  </section>
-
-  <section class="content">
-    <div class="row">
-      <h2>Trending Movies</h2>
-      <div class="list" id="movies-list"></div>
+      <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
     </div>
+  </div>
 
-    <div class="row">
-      <h2>Trending TV Shows</h2>
-      <div class="list" id="tvshows-list"></div>
-    </div>
+  <div class="banner" id="banner">
+    <h1 id="banner-title"></h1>
+  </div>
 
-    <div class="row">
-      <h2>Trending Anime</h2>
-      <div class="list" id="anime-list"></div>
-    </div>
-  </section>
+  <div class="row">
+    <h2>Trending Movies</h2>
+    <div class="list" id="movies-list"></div>
+  </div>
 
-  <!-- Movie Detail Modal -->
-  <div class="modal" id="modal" role="dialog" aria-hidden="true">
+  <div class="row">
+    <h2>Trending TV Shows</h2>
+    <div class="list" id="tvshows-list"></div>
+  </div>
+
+  <div class="row">
+    <h2>Trending Anime</h2>
+    <div class="list" id="anime-list"></div>
+  </div>
+
+  <div class="modal" id="modal">
     <div class="modal-content">
-      <button class="close" onclick="closeModal()" aria-label="Close Modal">&times;</button>
+      <span class="close" onclick="closeModal()" style="color: red;">&times;</span>
       <div class="modal-body">
-        <img id="modal-image" src="" alt="Movie Poster" />
-        <div class="modal-text">
-          <h2 id="modal-title"></h2>
-          <div class="stars" id="modal-rating"></div>
-          <p id="modal-description"></p>
-        </div>
-      </div>
-
+  <img id="modal-image" src="" alt="" />
+  <div class="modal-text">
+    <h2 id="modal-title"></h2>
+    <div class="stars" id="modal-rating"></div>
+    <p id="modal-description"></p>
+  </div>
+</div>
+      
       <div class="server-selector">
         <label for="server">Change Server:</label>
         <select id="server" onchange="changeServer()">
@@ -90,20 +69,22 @@
     </div>
   </div>
 
-  <!-- Search Modal -->
-  <div class="search-modal" id="search-modal" role="dialog" aria-hidden="true">
-    <button class="close" onclick="closeSearchModal()" aria-label="Close Search Modal">&times;</button>
-    <input type="text" id="search-input" placeholder="Search for a movie or show..." oninput="searchTMDB()" aria-label="Search Movies or Shows" />
+  <div class="search-modal" id="search-modal">
+    <span class="close" onclick="closeSearchModal()" style="color: red;">&times;</span>
+    <input type="text" id="search-input" placeholder="Search for a movie or show..." oninput="searchTMDB()" />
     <div class="results" id="search-results"></div>
   </div>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 Daily Dose Movies. All rights reserved.</p>
-      <nav class="footer-links">
-      </nav>
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Disclaimer</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
+  
 </body>
-</html>
